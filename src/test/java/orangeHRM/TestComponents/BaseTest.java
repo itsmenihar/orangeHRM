@@ -34,7 +34,7 @@ public class BaseTest {
 
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(
-				System.getProperty("user.dir") + "/src/main/java/opencart/resources/GlobalData.properties");
+				System.getProperty("user.dir") + "/src/main/java/orangeHRM/resources/GlobalData.properties");
 		prop.load(fis);
 		String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
 				: prop.getProperty("browser");
@@ -54,8 +54,8 @@ public class BaseTest {
 		}
 
 		// Wait for synchronization
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		return driver;
